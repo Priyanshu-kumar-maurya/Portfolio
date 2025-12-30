@@ -16,7 +16,7 @@ function App() {
       title: "Portfolio",
       desc: "Modern responsive portfolio with animations",
       tech: "React | Tailwind CSS | Vite",
-      liveLink: "https://your-portfolio.netlify.app",
+      liveLink: "https://codex-priyanshu.github.io/Portfolio/",
       githubLink: "https://github.com/codex-priyanshu/portfolio"
     },
     {
