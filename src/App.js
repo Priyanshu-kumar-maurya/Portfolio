@@ -209,7 +209,7 @@ function App() {
           <a href="mailto:codexpriyanshu65@gmail.com" className="px-12 py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-3xl text-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-105">
             📧 Email Me
           </a>
-          <a href="https://github.com/Priyanshu-kumar-maurya" target="_blank" className="px-12 py-6 border-3 border-purple-400 text-purple-400 font-bold rounded-3xl text-xl hover:bg-purple-600 hover:text-white transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-105">
+          <a href="https://github.com/Priyanshu-kumar-maurya" target="_blank" rel="noopener noreferrer" className="px-12 py-6 border-3 border-purple-400 text-purple-400 font-bold rounded-3xl text-xl hover:bg-purple-600 hover:text-white transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-105">
             💻 GitHub
           </a>
         </div>
