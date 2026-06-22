@@ -6,32 +6,66 @@ function App() {
 
   const projects = [
     {
-      title: "Dating App",
-      desc: "React + Tailwind card UI, UPI payment Razorpay integration",
-      tech: "React | Tailwind | Razorpay",
-      liveLink: "https://your-dating-app.netlify.app",
-      githubLink: "https://github.com/codex-priyanshu/dating-app"
+      title: "Companion App",
+      icon: "🤝",
+      desc: "A full-stack companion booking app with real-time chat functionality. Built with modern JavaScript technologies.",
+      tech: "JavaScript | Full-Stack | Real-Time",
+      liveLink: "https://rentgf-app.vercel.app/",
+      githubLink: "https://github.com/Priyanshu-kumar-maurya/companion-app"
     },
     {
-      title: "Portfolio",
-      desc: "Modern responsive portfolio with animations",
-      tech: "React | Tailwind CSS | Vite",
-      liveLink: "https://codex-priyanshu.github.io/Portfolio/",
-      githubLink: "https://github.com/codex-priyanshu/portfolio"
+      title: "Library Management System",
+      icon: "📚",
+      desc: "Role-based Library Management System with Admin & Student dashboards, book reservations and report generation.",
+      tech: "HTML | JavaScript | SQLite | Node.js",
+      liveLink: "https://library-m.vercel.app",
+      githubLink: "https://github.com/Priyanshu-kumar-maurya/library-project"
     },
     {
-      title: "Payment Gateway",
-      desc: "UPI QR integration + payment flow",
-      tech: "Razorpay | React | Node.js",
-      liveLink: "https://your-payment-app.vercel.app",
-      githubLink: "https://github.com/codex-priyanshu/payment-gateway"
+      title: "Earrings Shop",
+      icon: "👂",
+      desc: "A beautiful e-commerce website to discover and shop for elegant earrings with a modern UI design.",
+      tech: "JavaScript | E-Commerce | CSS",
+      liveLink: "https://earrings-shop.vercel.app/",
+      githubLink: "https://github.com/Priyanshu-kumar-maurya/Earrings-shop"
+    },
+    {
+      title: "BMW Shop",
+      icon: "🚗",
+      desc: "A sleek and premium BMW car showcase website with elegant product display and modern styling.",
+      tech: "HTML | CSS | UI/UX",
+      liveLink: "https://bmw-shop-kappa.vercel.app",
+      githubLink: "https://github.com/Priyanshu-kumar-maurya/BMW-SHOP"
+    },
+    {
+      title: "Coffee Shop",
+      icon: "☕",
+      desc: "A warm and inviting coffee shop landing page with responsive layout, menu showcase and attractive design.",
+      tech: "HTML | CSS | Responsive",
+      liveLink: "https://priyanshu-kumar-maurya.github.io/Coffee-shop/",
+      githubLink: "https://github.com/Priyanshu-kumar-maurya/Coffee-shop"
+    },
+    {
+      title: "Fast Foods Website",
+      icon: "🍔",
+      desc: "A vibrant fast food ordering website with mouth-watering visuals, menu sections and modern UI layout.",
+      tech: "HTML | CSS | JavaScript",
+      liveLink: "https://github.com/Priyanshu-kumar-maurya/fast-foods",
+      githubLink: "https://github.com/Priyanshu-kumar-maurya/fast-foods"
+    },
+    {
+      title: "Calculator",
+      icon: "🧮",
+      desc: "A clean and functional calculator app built with pure HTML, CSS and JavaScript with smooth interactions.",
+      tech: "HTML | CSS | JavaScript",
+      liveLink: "https://github.com/Priyanshu-kumar-maurya/Calculator",
+      githubLink: "https://github.com/Priyanshu-kumar-maurya/Calculator"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 relative overflow-hidden">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+      <section className="min-h-[100dvh] flex items-center justify-center bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="text-center px-4 max-w-4xl mx-auto relative z-10">
           <h1 className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent animate-pulse">
@@ -54,7 +88,6 @@ function App() {
         </div>
       </section>
 
-      {/* Projects Modal */}
       {isProjectsOpen && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-8">
           <div className="bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900 backdrop-blur-xl max-w-6xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-white/20 shadow-2xl">
@@ -75,6 +108,7 @@ function App() {
             <div className="p-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <div key={index} className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-8 rounded-2xl backdrop-blur-sm border border-white/20 hover:bg-purple-500/20 transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-purple-500/25">
+                  <div className="text-4xl mb-3">{project.icon}</div>
                   <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors">{project.title}</h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">{project.desc}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -109,8 +143,7 @@ function App() {
         </div>
       )}
 
-      {/* बाकी sections same रखें (About, Projects, Contact) */}
-      {/* Your existing About, Projects, Contact sections */}
+     
 
       {/* About Section */}
       <section id="about" className="py-32 px-8 max-w-6xl mx-auto">
@@ -134,10 +167,11 @@ function App() {
           </div>
           <div className="relative">
             <img
-              src="/images/me2.jpeg"
+              src={process.env.PUBLIC_URL + "/images/me2.jpeg"}
               alt="Priyanshu"
               className="w-96 h-96 rounded-3xl mx-auto shadow-2xl object-cover border-8 border-white/30 hover:scale-105 transition-all duration-500 cursor-pointer"
             />
+
             <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur-xl opacity-60 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/50 via-pink-400/50 to-blue-400/50 rounded-3xl shadow-2xl animate-ping opacity-30"></div>
           </div>
@@ -148,12 +182,9 @@ function App() {
       <section id="projects" className="py-32 px-8 bg-slate-800/30 backdrop-blur-sm">
         <h2 className="text-5xl font-bold text-center mb-20 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {[
-            { title: "Dating App", desc: "React + Tailwind card UI, UPI payment Razorpay integration", tech: "React | Tailwind | Razorpay" },
-            { title: "Portfolio", desc: "Modern responsive portfolio with animations", tech: "React | Tailwind CSS | Vite" },
-            { title: "Payment Gateway", desc: "UPI QR integration + payment flow", tech: "Razorpay | React | Node.js" }
-          ].map((project, index) => (
-            <div key={index} className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-10 rounded-3xl backdrop-blur-sm border border-white/20 hover:bg-purple-500/20 transition-all duration-700 hover:scale-105 hover:-translate-y-6 cursor-pointer shadow-2xl hover:shadow-purple-500/25">
+          {projects.map((project, index) => (
+            <a key={index} href={project.githubLink} target="_blank" rel="noopener noreferrer" className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-10 rounded-3xl backdrop-blur-sm border border-white/20 hover:bg-purple-500/20 transition-all duration-700 hover:scale-105 hover:-translate-y-6 cursor-pointer shadow-2xl hover:shadow-purple-500/25 block no-underline">
+              <div className="text-4xl mb-3">{project.icon}</div>
               <h3 className="text-3xl font-bold mb-6 text-white group-hover:text-purple-400 transition-colors">{project.title}</h3>
               <p className="text-gray-300 mb-8 leading-relaxed">{project.desc}</p>
               <div className="flex flex-wrap gap-2 mb-8 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -164,7 +195,8 @@ function App() {
                 ))}
               </div>
               <div className="h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full w-0 group-hover:w-full transition-all duration-700"></div>
-            </div>
+              <div className="mt-4 text-purple-400 font-semibold text-sm group-hover:text-white transition-colors">📂 View on GitHub →</div>
+            </a>
           ))}
         </div>
       </section>
@@ -177,7 +209,7 @@ function App() {
           <a href="mailto:codexpriyanshu65@gmail.com" className="px-12 py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-3xl text-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-105">
             📧 Email Me
           </a>
-          <a href="https://github.com/codex-priyanshu" target="_blank" className="px-12 py-6 border-3 border-purple-400 text-purple-400 font-bold rounded-3xl text-xl hover:bg-purple-600 hover:text-white transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-105">
+          <a href="https://github.com/Priyanshu-kumar-maurya" target="_blank" className="px-12 py-6 border-3 border-purple-400 text-purple-400 font-bold rounded-3xl text-xl hover:bg-purple-600 hover:text-white transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-105">
             💻 GitHub
           </a>
         </div>
