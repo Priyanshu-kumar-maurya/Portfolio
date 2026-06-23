@@ -1,3 +1,191 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-primary: #05050b;
+  --bg-secondary: #0c0c1e;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --accent-cyan: #00f0ff;
+  --accent-purple: #bd00ff;
+  --accent-pink: #ff007f;
+  --glass-bg: rgba(12, 12, 30, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Hide default cursor on desktop for custom cursor */
+@media (min-width: 1025px) {
+  body, a, button, input, textarea, select {
+    cursor: none !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(189, 0, 255, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.6);
+}
+
+/* Typography helper classes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Premium Glassmorphic Panel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel:hover {
+  border-color: rgba(0, 240, 255, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 240, 255, 0.15);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Cyber Grid Background overlay */
+.cyber-grid {
+  z-index: 1;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Animated Neon Blobs */
+.bg-blob-container {
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.bg-blob {
+  filter: blur(140px);
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  border-radius: 50%;
+  position: absolute;
+  animation: float 25s ease-in-out infinite alternate;
+}
+.blob1 {
+  background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  left: -10%;
+  animation-duration: 22s;
+}
+.blob2 {
+  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+  width: 700px;
+  height: 700px;
+  bottom: 15%;
+  right: -10%;
+  animation-duration: 28s;
+  animation-delay: 2s;
+}
+.blob3 {
+  background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 30%;
+  animation-duration: 20s;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(100px, 140px) scale(1.15) rotate(120deg);
+  }
+  66% {
+    transform: translate(-120px, 80px) scale(0.9) rotate(240deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(360deg);
+  }
+}
+
+/* Custom Interactive Cursor */
+.custom-cursor {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: left 0.1s cubic-bezier(0.25, 1, 0.5, 1), top 0.1s cubic-bezier(0.25, 1, 0.5, 1), width 0.25s, height 0.25s, background-color 0.25s, border-color 0.25s;
+}
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-purple);
+  box-shadow: 0 0 10px var(--accent-purple);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+}
+.cursor-hover {
+  width: 52px;
+  height: 52px;
+  border-color: var(--accent-pink);
+  background-color: rgba(255, 0, 127, 0.08);
+}
